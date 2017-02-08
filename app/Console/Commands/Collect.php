@@ -40,10 +40,15 @@ class Collect extends Command
         try {
             $fun = $this->argument('fun');
             if(!empty($fun)) {
-                eval("\$this->$fun();");
+                $this->$fun();
             }
         } catch(Exception $e) {
             echo $e->getMessage()."\n";
         }
+    }
+
+    public function test()
+    {
+        echo 'This is a test'."\n";
     }
 }
